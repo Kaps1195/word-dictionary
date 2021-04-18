@@ -17,8 +17,10 @@ function Dictionary() {
 
 		axios.request(requestOptions)
 		.then(function (response) {
+			console.info(`Valid Word!`)
 			resolve(response.data)
 		}).catch(function (error) {
+			console.info(`Invalid Word!`)
 			console.info(`It seems like you have entered a wrong word! `); 
 			resolve(false);
 		});
