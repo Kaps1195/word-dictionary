@@ -1,0 +1,112 @@
+[
+    {
+        "id": 1,
+        "word": "agitated",
+        "definition": "troubled in mind : disturbed and upset",
+        "synoynms": ["excited", "feverish"],
+        "antonyms": ["calm", "collected", "composed", "cool"],
+        "examples": [
+            "The family dog, Blue, was underneath the vehicle, agitated and hungry.",
+            "Others said that Nelson was trying to demonstrate that his client was distracted and may have felt threatened by the increasingly agitated crowd of bystanders."
+        ]
+    },
+    {
+        "id": 2,
+        "word": "bye",
+        "definition": "the position of a participant in a tournament who advances to the next round without playing",
+        "synoynms": ["adieu", "au revoir"],
+        "antonyms": ["greeting(s)", "salutation"],
+        "examples": [
+            "The Wolves close district play with Houston MST and Bellaire, while Heights plays Chavez next week before a bye.",
+            "The 6-1 Buckeyes had a bye this past weekend, while the Nittany Lions routed Michigan, 42-13, to improve to 7-0."
+        ]
+    },
+    {
+        "id": 3,
+        "word": "chump",
+        "definition": "a person who is easily tricked : a stupid or foolish person",
+        "synoynms": ["dupe", "gull", "mug"],
+        "antonyms": ["cheat", "cheater"],
+        "examples": [
+            "For some reason, Da'Vonne is still treating David like a chump player, and putting full trust in Dani and Nicole.",
+            "Americans invented business English and confessional poetry; doing business in the UK is an entirely different thing, and confession there is a chump’s game."
+        ]
+    },
+    {
+        "id": 4,
+        "word": "dumb",
+        "definition": "lacking intelligence",
+        "synoynms": ["mum", "mute", "muted", "silent", "speechless"],
+        "antonyms": ["articulate", "eloquent", "fluent"],
+        "examples": [
+            "Ratajkowski has been fighting the stereotype of the dumb model from the beginning of her career.",
+            "Ninety nine percent of all NFL players are explicitly not dumb."
+        ]
+    },
+    {
+        "id": 5,
+        "word": "expect",
+        "definition": "to consider probable or certain",
+        "synoynms": ["anticipate", "await", "hope (for)", "watch (for)"],
+        "antonyms": ["doubt", "question"],
+        "examples": [
+            "Staff will be administering Pfizer vaccines to people 16-years-old and up at Barber park, where Orange officials expect 1,000 doses to be distributed every day this week until 7 p.m.",
+            "The survey indicates business leaders expect to see an increase in sales, profits, hiring and expenditures in the second quarter."
+        ]
+    },
+    {
+        "id": 6,
+        "word": "fine",
+        "definition": "ALL RIGHT",
+        "synoynms": ["dusty", "floury", "powdery"],
+        "antonyms": ["rough","unfiltered", "unrefined"],
+        "examples": [
+            "Is there anything wrong?” “No, everything's fine.",
+            "The house looks fine to me."
+        ]
+    },
+    {
+        "id": 7,
+        "word": "give",
+        "definition": "to make a present of",
+        "synoynms": ["bestow", "contribute", "donate"],
+        "antonyms": ["hold", "keep", "pocket"],
+        "examples": [
+            "She gave him a camera for Christmas.",
+            "Are you giving this to me or only lending it?"
+        ]
+    },
+    {
+        "id": 8,
+        "word": "help",
+        "definition": "to give assistance or support to",
+        "synoynms": ["abet", "aid", "assist", "back", "backstop", "prop (up)", "support"],
+        "antonyms": ["balk", "bar", "block", "constrain", "hamper", "handicap", "hold back", "inhibit", "obstruct", "restrain", "strangle"],
+        "examples": [
+            "Don't blame me: I was only trying to help!",
+            "Help! Somebody call the police!"
+        ]
+    },
+    {
+        "id": 9,
+        "word": "make",
+        "definition": "to bring into being by forming, shaping, or altering material",
+        "synoynms": ["fabricate", "fashion", "form", "frame", "manufacture", "produce"],
+        "antonyms": ["impede", "limit", "restrict"],
+        "examples": [
+            "He works in a factory that makes jet engines.",
+            "She made the curtains herself."
+        ]
+    },
+    {
+        "id": 10,
+        "word": "work",
+        "definition": "to perform work or fulfill duties regularly for wages or salary",
+        "synoynms": ["beget", "breed", "bring", "bring about"],
+        "antonyms": ["impede", "limit", "restrict"],
+        "examples": [
+            "I started working when I was sixteen.",
+            "She works part-time at the restaurant."
+        ]
+    }
+]

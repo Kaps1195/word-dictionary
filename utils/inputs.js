@@ -46,14 +46,14 @@ const numberInput = () => {
 	});
 }
 
-const playAgainInput = () => {
+const playInput = () => {
 	return new Promise((resolve, reject) => {
 		console.log('\t');
 		inquirer.prompt([
 			{
 				type: 'input',
 				name: 'word',
-				message: 'Would you like to play again? (y/n)',
+				message: 'Would you like to play the Dictionary Game? (y/n)',
 			}
 		])
 		.then(answers => {
@@ -72,5 +72,5 @@ const playAgainInput = () => {
 module.exports = {
     wordInput,
     numberInput,
-	playAgainInput
+	playInput
 }
