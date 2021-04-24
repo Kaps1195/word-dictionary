@@ -140,8 +140,8 @@ function Dictionary() {
 	}
 
 	this.displayAnswer = (index) => {
-		const finalAnswer = DictionaryWords[index];
-		return finalAnswer;
+		let finalAnswer = DictionaryWords.filter(word => word.id === index ? word : false);
+		return finalAnswer[0];
 	}
 
 }
