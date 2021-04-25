@@ -29,9 +29,6 @@ const fetchRandomWordProperty = (index, properties) => {
 	const randomProperty = properties[randomPropertyIndex];
 	let word = DictionaryWords.filter(word => word.id === index ? word : false);
 	word = word[0];
-	// console.log(word);
-	// console.log(DictionaryIndex.length, DictionaryWords.length)
-	// console.log({index, word, i: DictionaryIndex[index]})
 	const randomProp = {};
 
 	// Take a random value from the synonyms array
@@ -91,46 +88,6 @@ const checkValidWord = (word) => {
 	return found ? true : false;
 };
 
-const fetchWordIndex = (word) => {
-	const wordIndex = DictionaryIndex.indexOf(word);
-	return wordIndex;
-};
-
-const fetchWordInformation = (wordIndex) => {
-	const wordInformation = DictionaryWords[wordIndex];
-	return wordInformation;
-};
-
-const binarySearch = (searchWord) => {
-	// const algorithmStartTime = performance.now();
-
-	const words = DictionaryIndex;
-	let startIndex = 0;
-	let stopIndex  = words.length - 1;
-	let middle = Math.floor((stopIndex + startIndex) / 2);
-
-	while(words[middle] != searchWord && startIndex < stopIndex) {
-		
-		// Search on the left subtree
-		if (searchWord < words[middle]) {
-			stopIndex = middle - 1;
-		}
-		// Search on the right subtree 
-		else if (searchWord > words[middle]) {
-			startIndex = middle + 1;
-		}
-	
-		// Recalculating middle before iterating again
-		middle = Math.floor((stopIndex + startIndex) / 2);
-	}
-	
-	// const algorithmEndTime = performance.now();
-	// console.log("Call to binarySearch took " + (algorithmEndTime - algorithmStartTime) + " milliseconds.");
-
-	// Ensuring that the right searchWord is returned
-	return (words[middle] != searchWord) ? false : middle;
-};
-
 const verifyAnswer = (index, guessWord) => {
 	let findWord = DictionaryWords.filter(word => word.id === index ? word : false);
 	let actualWordInfo = findWord[0];
@@ -151,9 +108,6 @@ module.exports = {
 	showSynonymHint,
 	showAntoynmHint,
 	checkValidWord,
-	fetchWordIndex,
-	fetchWordInformation,
-	binarySearch,
 	verifyAnswer,
 	displayAnswer
 };
