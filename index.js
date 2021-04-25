@@ -1,5 +1,5 @@
 const fetchInput = require('./utils/inputs');
-const Dictionary = require('./Dictionary');
+const dictionaryHelper = require('./helpers/Dictionary');
 
 const main = async () => {
 	try {
@@ -7,21 +7,16 @@ const main = async () => {
 		console.log('Welcome to our Dictionary CLI!');
         console.log('\t');
 
-		const DictionaryInstance = new Dictionary();
-		DictionaryInstance.displayAllWords();
+		// Display complete word information in the beginning
+		dictionaryHelper.displayAllWords();
 	
 		// Display word of the first
         console.log('\t');
         console.log('\t');
 		console.log(`----------------------- Today's word of the day is -----------------------`);
-		const wordOfTheDay = DictionaryInstance.fetchRandomWord();
+		const wordOfTheDay = dictionaryHelper.fetchRandomWord();
 		console.table([wordOfTheDay], ["word","definition"]);
 		console.log(`----------------------- Today's word of the day is -----------------------`);
-
-		// Ask user to display a given word's synoynms/antonyms/definition
-
-
-		let playInput;
 
 		while(true) {
 			// Ask user to play the game
@@ -33,7 +28,7 @@ const main = async () => {
 
 			console.log('\t')
 			console.log(`----------------------- Fetching a Random Word's information (could be a synonym/antonym/definition) -----------------------`);
-			const randomWordForTheGame = DictionaryInstance.fetchRandomWord();
+			const randomWordForTheGame = dictionaryHelper.fetchRandomWord();
 			
 			if(wordOfTheDay === randomWordForTheGame) {
 				console.log('Oops! This was unexpected! It seems the word of the day and random word for the game are the same!!');
@@ -43,10 +38,8 @@ const main = async () => {
 				// Proceed Further and display a Random property of the word
 				const wordProperties = ["synoynms","antonyms","definition"];
 				const { id } = randomWordForTheGame;
-				// console.log({randomWordForTheGame});
 				const actualWord = randomWordForTheGame.word;
-				// console.log(id);
-				const randomPropertyOfTheWord = DictionaryInstance.fetchRandomWordProperty(id, wordProperties);
+				const randomPropertyOfTheWord = dictionaryHelper.fetchRandomWordProperty(id, wordProperties);
 				
 				// Display Random Properties
 				console.log(randomPropertyOfTheWord);
@@ -56,7 +49,7 @@ const main = async () => {
 				const { word } = userWordFirst;
 				
 				// Verify the answer
-				const answer = DictionaryInstance.verifyAnswer(id, word);
+				const answer = dictionaryHelper.verifyAnswer(id, word);
 
 				// First Attempt
 				if(answer) {
@@ -89,10 +82,11 @@ const main = async () => {
 							const tryAgainWord = tryAgainInput.word;
 
 							// Verify the answer again
-							const tryAgainAnswer = DictionaryInstance.verifyAnswer(id, tryAgainWord);
+							const tryAgainAnswer = dictionaryHelper.verifyAnswer(id, tryAgainWord);
 
 							if(!tryAgainAnswer) {
-								console.log('Wrong Again');
+								console.log('\t');
+								console.log('Wrong Answer!');
 							} else {
 								console.log(`Congrats! You guessed it right! ${tryAgainWord} is the right word`);
 								console.log('\t');
@@ -103,9 +97,9 @@ const main = async () => {
 						case '2':
 							// Shuffling hint functions and displaying random hints
 							const randomHints = [
-								DictionaryInstance.showJumbledWordHint(actualWord),
-								DictionaryInstance.showSynonymHint(id),
-								DictionaryInstance.showAntoynmHint(id)
+								dictionaryHelper.showJumbledWordHint(actualWord),
+								dictionaryHelper.showSynonymHint(id),
+								dictionaryHelper.showAntoynmHint(id)
 							];
 							// console.log(randomHints);
 							const randomHintIndex = Math.floor(Math.random() * (randomHints.length));
@@ -116,9 +110,10 @@ const main = async () => {
 							const userHInput = userHintInput.word;
 
 							// Verify the answer again
-							const userHintAnswer = DictionaryInstance.verifyAnswer(id, userHInput);
+							const userHintAnswer = dictionaryHelper.verifyAnswer(id, userHInput);
 							if(!userHintAnswer) {
-								console.log('Wrong Again');
+								console.log('\t');
+								console.log('Wrong Answer!');
 							} else {
 								console.log(`Congrats! You guessed it right! ${userHInput} is the right word`);
 								console.log('\t');
@@ -127,7 +122,7 @@ const main = async () => {
 							}							
 							break;
 						case '3':
-							const finalAnswer = DictionaryInstance.displayAnswer(id);
+							const finalAnswer = dictionaryHelper.displayAnswer(id);
 							console.log('The answer was -> ', finalAnswer);
 							userWantsToContinue = false;
 							break;

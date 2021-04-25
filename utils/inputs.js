@@ -7,7 +7,7 @@ const wordInput = () => {
 			{
 				type: 'input',
 				name: 'word',
-				message: 'Please enter your word',
+				message: 'Please guess the word',
 			}
 		])
 		.then(answers => {
