@@ -96,14 +96,13 @@ const main = async () => {
 							break;
 						case '2':
 							// Shuffling hint functions and displaying random hints
-							const randomHints = [
-								dictionaryHelper.showJumbledWordHint(actualWord),
-								dictionaryHelper.showSynonymHint(id),
-								dictionaryHelper.showAntoynmHint(id)
-							];
-							// console.log(randomHints);
-							const randomHintIndex = Math.floor(Math.random() * (randomHints.length));
-							console.log('Hint -> ', randomHints[randomHintIndex]);
+							const randomHintIndex = Math.floor(Math.random() * (3));
+							let randomHint;
+							if(randomHintIndex === 0) randomHint = dictionaryHelper.showJumbledWordHint(actualWord) ;
+							if(randomHintIndex === 1) randomHint = dictionaryHelper.showSynonymHint(id);  
+							if(randomHintIndex === 2) randomHint = dictionaryHelper.showAntoynmHint(id);
+							
+							console.log('Hint -> ', randomHint);
 
 							// Take user input again
 							const userHintInput = await fetchInput.wordInput();
